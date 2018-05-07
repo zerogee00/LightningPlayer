@@ -27,6 +27,7 @@
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="initPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ikc-d7-y1h"/>
+                                    <action selector="startLightningPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vB4-Ga-bes"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KnL-H8-Yrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="134"/>
+            <point key="canvasLocation" x="1314" y="34"/>
         </scene>
     </scenes>
 </document>

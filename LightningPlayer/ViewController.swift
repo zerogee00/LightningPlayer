@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  LightningPlayer
 //
-//  Created by Doktor Odd on 5/6/18.
+//  Created by David Rodd on 5/6/18.
 //  Copyright © 2018 Lightning Rodd. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         var btnNext : UIButton!
     
         //Next BUTTON
-        let btnNextRect = CGRect(x: 0, y: 0, width: 50, height: 75)
+        let btnNextRect = CGRect(x: 0, y: 0, width: 20, height: 15)
         btnNext = UIButton(frame: btnNextRect)
         //        btnNext.center = (controller.contentOverlayView?.center)!
                 btnNext.accessibilityLabel = ("next")
@@ -32,8 +32,9 @@ class ViewController: UIViewController {
     
 }
     
+//    @IBAction func startLightningPlayer(player: AVPlayer, sender: Any) {
+    
     @objc public func startLightningPlayer(player: AVPlayer, sender: UIButton) {
-        //      @objc @IBAction func startLightningPlayer(player: AVPlayer, sender: UIButton) {
         
         let playerItem = player.currentItem!
         let asset = player.currentItem!.asset
@@ -46,28 +47,29 @@ class ViewController: UIViewController {
             
             switch sender.tag {
             case 1:
-                //              TOP LEFT
+//              TOP LEFT QUADRANT
                 self.view.transform = (CGAffineTransform(translationX: 368, y: 207))
                 self.view.transform = self.view.transform.scaledBy(x: 2, y: 2)
-                playerItem.select(options[2], in: group)
+                playerItem.select(options[2], in: group) // choose 3rd audio track
             case 2:
-                //              TOP RIGHT
+//              TOP RIGHT QUADRANT
                 self.view.transform = (CGAffineTransform(translationX: -368, y: 207))
                 self.view.transform = self.view.transform.scaledBy(x: 2, y: 2)
-                playerItem.select(options[3], in: group)
+                playerItem.select(options[3], in: group) // choose 4th audio track
             case 3:
-                //              BOTTOM LEFT
+//              BOTTOM LEFT QUADRANT
                 self.view.transform = (CGAffineTransform(translationX: 368, y: -207))
                 self.view.transform = self.view.transform.scaledBy(x: 2, y: 2)
-                playerItem.select(options[1], in: group)
+                playerItem.select(options[1], in: group) // choose 2nd audio track
             case 4:
-                //              BOTTOM RIGHT
+//              BOTTOM RIGHT QUADRANT
                 self.view.transform = (CGAffineTransform(translationX: -368, y: -207))
                 self.view.transform = self.view.transform.scaledBy(x: 2, y: 2)
-                playerItem.select(options[0], in: group)
+                playerItem.select(options[0], in: group) // choose 1st audio track
             default:
+//              SHOW ALL 4 QUADRANTS
                 self.view.transform = CGAffineTransform.identity
-                playerItem.selectMediaOptionAutomatically(in: group)
+                playerItem.selectMediaOptionAutomatically(in: group) // Automatically select default audio track
             }
         }
         
